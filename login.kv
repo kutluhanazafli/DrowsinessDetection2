@@ -1,0 +1,55 @@
+ #:kivy 1.0
+<Login>:
+    BoxLayout:
+        id: login_layout
+        orientation: 'vertical'
+        padding: [30,30,30,30]
+        spacing: 50
+        size_hint: None, None
+        size: 500,500
+        GridLayout:
+            cols:1
+            MDLabel:
+                text: 'Email'
+                halign: 'left'
+                font_size: 18
+            MDTextField:
+                id: input_email
+                multiline:False
+                font_size: 28
+            MDLabel:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+            MDTextField:
+                id: input_password
+                multiline:False
+                password:True
+                font_size: 28
+            Button:
+                id: "button_exit"
+                text: "Exit"
+                font_size: "18sp"
+                size_hint: None, None
+                size: 250,100
+                background_normal: ''
+                background_color: 1,0,0,1
+                on_release: app.stop()
+            Button:
+                id: "button_login"
+                text: "Login"
+                font_size: "18sp"
+                size_hint: None, None
+                size: 250,100
+                background_normal: ''
+                background_color: 0,1,0,1
+                on_release: root.connect()
+            Button:
+                id: "button_register"
+                text: "Register"
+                font_size: "18sp"
+                size_hint: None, None
+                size: 250,100
+                background_normal: ''
+                background_color: 0,0,1,1
+                on_release: root.register()
